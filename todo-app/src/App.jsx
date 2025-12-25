@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
-      <AppLayout />;
+      <AppLayout />
       <Toaster
         position="bottom-center"
         reverseOrder={false}
