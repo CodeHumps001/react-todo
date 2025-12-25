@@ -1,0 +1,86 @@
+They just send me this todo from CreedTech
+
+Simple Todo List App
+ Project Objective
+
+This covers the topic we did 
+
+Components
+
+JSX
+
+useState
+
+Handling events
+
+Rendering lists
+
+Conditional rendering
+
+ Project Description
+
+Build a Todo List App where a user can:
+
+Add a new task
+
+View all tasks
+
+Mark a task as completed
+
+Delete a task
+
+ Requirements (Very Important)
+ App Structure
+
+App.jsx (Main component)
+
+TodoInput.jsx
+
+TodoList.jsx
+
+TodoItem.jsx
+
+ Features to Implement
+➤ Add Todo
+
+Input field to type a task
+
+Button to add task to the list
+
+Prevent adding empty tasks
+
+➤ Display Todos
+
+Show all todos in a list
+
+Each todo should display:
+
+Task text
+
+“Complete” button
+
+“Delete” button
+
+➤ Mark as Completed
+
+Clicking Complete should:
+
+Change the style (line-through text)
+
+Update state correctly
+
+➤ Delete Todo
+
+Remove the selected todo from the list
+
+ Concepts You Must Use
+
+useState
+
+props
+
+map() for rendering list
+
+Event handlers (onClick, onChange)
+
+Conditional class or text rendering
