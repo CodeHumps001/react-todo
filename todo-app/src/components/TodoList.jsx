@@ -1,24 +1,35 @@
-import { Box, CircleCheckBig, Delete } from "lucide-react";
+import {
+  ArrowDownRight,
+  ArrowUpLeft,
+  Badge,
+  Box,
+  CircleCheckBig,
+  Delete,
+} from "lucide-react";
 import Button from "./Button";
 import formatDate from "../helper/DateFormat";
 
 export default function TodoList({ newItem, handleDelete, handleComplete }) {
   return (
-    <li className="animate-slide-in flex gap-2 justify-between items-center p-3 shadow border border-gray-200 rounded-sm">
+    <li className="animate-slide-in flex gap-3 justify-between items-center p-3 shadow bg-white/5 rounded-sm ">
       <div className="flex gap-3 justify-center items-center">
         <span>
-          <Box size={10} color="green" strokeWidth={3} />
+          {!newItem.complete ? (
+            <ArrowDownRight size={10} color="green" strokeWidth={3} />
+          ) : (
+            <ArrowUpLeft size={10} color="red" strokeWidth={3} />
+          )}
         </span>
 
         <div className="flex flex-col ">
           <h1
-            className={` text-lg capitalize text-gray-700 ${
-              newItem.complete ? "line-through text-gray-600" : ""
+            className={` text-lg capitalize ${
+              newItem.complete ? "line-through text-gray-170 " : " text-white"
             }`}
           >
             {newItem.task}
           </h1>
-          <time className="text-sm lowercase text-gray-300">
+          <time className="text-sm lowercase text-red-500">
             {" "}
             added: {formatDate(newItem.date)}
           </time>

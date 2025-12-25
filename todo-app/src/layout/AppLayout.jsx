@@ -40,18 +40,17 @@ export default function AppLayout() {
     toast.success(`Task Updated successfully`);
   }
   return (
-    <Row>
+    <Row className="bg-slate-900">
       <Header hide={hide} onHide={setHide} />
 
-      <main className="flex flex-col justify-start items-center h-8/12 w-6/12 bg-white/10   m-auto border rounded-2xl border-gray-200 p-10 max-[762px]:w-12/12 max-[762px]:border-gray-50 max-[762px]:p-2">
-        <TodoForm item={item} onChange={setItem} hide={hide} />
-
+      <main className="flex flex-col justify-between items-center h-12/12 w-6/12 bg-transparent    m-auto  rounded-sm p-5 max-[762px]:w-12/12  max-[762px]:p-2">
         <TodoItem
           item={item}
           onChange={setItem}
           handleDelete={handleDelete}
           handleComplete={handleComplete}
         />
+        <TodoForm item={item} onChange={setItem} hide={hide} />
       </main>
     </Row>
   );
