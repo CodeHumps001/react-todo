@@ -5,13 +5,6 @@ import TodoItem from "../components/TodoItem";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const Row = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
 export default function AppLayout() {
   const [item, setItem] = useState(() => {
     const savedTasks = localStorage.getItem("task");
@@ -40,10 +33,10 @@ export default function AppLayout() {
     toast.success(`Task Updated successfully`);
   }
   return (
-    <Row className="bg-slate-900 overflow-hidden">
+    <div className="bg-slate-900 overflow-auto h-svh flex flex-col  ">
       <Header hide={hide} onHide={setHide} />
 
-      <main className="flex flex-col h-screen w-full max-w-2xl m-auto p-5 overflow-hidden">
+      <main className="flex flex-col  w-full max-w-2xl m-auto p-5 overflow-hidden">
         {/* Scrollable Container for Tasks */}
         <div className="flex-1 overflow-y-auto min-h-0 mb-4 pr-2 custom-scrollbar">
           <TodoItem
@@ -54,11 +47,10 @@ export default function AppLayout() {
           />
         </div>
 
-        {/* Fixed Input at Bottom */}
         <div className="shrink">
           <TodoForm item={item} onChange={setItem} hide={hide} />
         </div>
       </main>
-    </Row>
+    </div>
   );
 }
