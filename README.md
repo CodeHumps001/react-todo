@@ -1,4 +1,4 @@
-# 📝 CreedTech Todo List App
+# 📝 CreedTask
 
 A modern, high-performance Todo application built with **React** and **Tailwind CSS**. This project was developed as a comprehensive implementation of core React principles as part of the **CreedTech** curriculum.
 

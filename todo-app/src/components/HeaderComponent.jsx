@@ -7,7 +7,7 @@ export default function Header({ hide, onHide }) {
           <Scroll size={30} color="green" />
         </span>
         <h1 className="text-3xl max-[782px]:text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-green-300 via-green-600 to-green-200  ">
-          TodoApp
+          CreedTask
         </h1>
       </div>
 
