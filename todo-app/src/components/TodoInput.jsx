@@ -19,7 +19,9 @@ export default function TodoForm({ item, onChange, hide }) {
       completed: false,
     };
 
-    onChange([...item, newTodo]);
+    const updatedTodos = [...item, newTodo];
+    onChange(updatedTodos);
+    localStorage.setItem("task", JSON.stringify(updatedTodos));
 
     setText("");
 

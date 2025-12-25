@@ -13,12 +13,17 @@ const Row = styled.div`
 `;
 
 export default function AppLayout() {
-  const [item, setItem] = useState([]);
+  const [item, setItem] = useState(() => {
+    const savedTasks = localStorage.getItem("task");
+
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
     toast.success("Welcome back, Genius");
-  }, []);
+    localStorage.setItem("task", JSON.stringify(item));
+  }, [item]);
 
   function handleDelete(id) {
     setItem((prevItems) => prevItems.filter((item) => item.id !== id));
@@ -31,7 +36,7 @@ export default function AppLayout() {
         item.id === id ? { ...item, complete: !item.complete } : item
       )
     );
-    console.log(item);
+
     toast.success(`Task Updated successfully`);
   }
   return (
