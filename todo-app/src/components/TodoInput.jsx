@@ -15,7 +15,7 @@ export default function TodoForm({ item, onChange, hide }) {
     const newTodo = {
       id: crypto.randomUUID(),
       date: new Date().toISOString(),
-      task: text,
+      task: text.toLocaleLowerCase(),
       completed: false,
     };
 

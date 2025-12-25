@@ -11,7 +11,13 @@ import formatDate from "../helper/DateFormat";
 
 export default function TodoList({ newItem, handleDelete, handleComplete }) {
   return (
-    <li className="animate-slide-in flex gap-3 justify-between items-center p-3 shadow bg-white/5 rounded-sm ">
+    <li
+      className={`animate-slide-in flex gap-3 justify-between items-center p-3 shadow bg-white/5 rounded-sm  ${
+        !newItem.complete
+          ? "border-l-2 border-green-500"
+          : "border-l-2 border-red-500"
+      }`}
+    >
       <div className="flex gap-3 justify-center items-center">
         <span>
           {!newItem.complete ? (
