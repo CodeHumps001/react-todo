@@ -41,7 +41,7 @@ export default function TodoForm({ item, onChange, hide }) {
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Add a task..."
-              className="w-60 py-3 pl-4 pr-14 border rounded-2xl focus:outline-none border-green-300 placeholder:text-gray-400 focus:w-full transition-all duration-300 ease-in-out"
+              className="w-60 py-3 pl-4 pr-14 border text-gray-100 rounded-2xl focus:outline-none border-green-300 placeholder:text-gray-400 focus:w-full transition-all duration-300 ease-in-out"
             />
             <button className="bg-green-500/10 p-3 rounded-full text-green-400 font-bold hover:bg-green-500 hover:text-white transition-all duration-300 absolute right-2">
               <Send size={18} />
