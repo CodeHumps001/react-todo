@@ -20,9 +20,11 @@ export default function TodoList({ newItem, handleDelete, handleComplete }) {
         <Button type="del" onClick={() => handleDelete(newItem.id)}>
           <Delete />
         </Button>
-        <Button type="com" onClick={() => handleComplete(newItem.id)}>
-          <CircleCheckBig />
-        </Button>
+        {!newItem.complete && (
+          <Button type="com" onClick={() => handleComplete(newItem.id)}>
+            <CircleCheckBig />
+          </Button>
+        )}
       </div>
     </li>
   );
