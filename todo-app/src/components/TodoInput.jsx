@@ -3,7 +3,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function TodoForm({ item, onChange, hide }) {
-  const [text, setText] = useState(""); // Rename for clarity
+  const [text, setText] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -12,14 +12,13 @@ export default function TodoForm({ item, onChange, hide }) {
       return;
     }
 
-    // 1. Create the new object with a unique ID
     const newTodo = {
-      id: crypto.randomUUID(), // Standard unique ID in 2025
+      id: crypto.randomUUID(),
+      date: new Date().toISOString(),
       task: text,
       completed: false,
     };
 
-    // 2. Add the object to the existing array
     onChange([...item, newTodo]);
 
     setText("");
