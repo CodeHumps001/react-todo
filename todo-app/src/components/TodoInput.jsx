@@ -32,20 +32,26 @@ export default function TodoForm({ item, onChange, hide }) {
     <>
       {hide && (
         <form
-          className="py-2 px-2 shadow rounded-2xl mb-10 relative  w-10/12 animate-slide-in"
+          className="w-full max-w-2xl px-4 mb-8 animate-slide-in"
           onSubmit={handleSubmit}
         >
-          <div className="relative flex items-center w-full max-w-xl group">
-            <input
-              type="text"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              placeholder="Add a task..."
-              className="w-60 py-3 pl-4 pr-14 border text-gray-100 rounded-2xl focus:outline-none border-green-300 placeholder:text-gray-400 focus:w-full transition-all duration-300 ease-in-out"
-            />
-            <button className="bg-green-500/10 p-3 rounded-full text-green-400 font-bold hover:bg-green-500 hover:text-white transition-all duration-300 absolute right-2">
-              <Send size={18} />
-            </button>
+          <div className="relative group flex items-center">
+            <div className="relative flex items-center w-full bg-slate-800/50 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+              <input
+                type="text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                placeholder="Add a new task..."
+                className="w-full py-3 pl-5 pr-16 bg-transparent text-gray-100 placeholder:text-gray-500 focus:outline-none text-base md:text-lg"
+              />
+
+              <button
+                type="submit"
+                className="absolute right-2 p-2 bg-green-500 text-slate-900 rounded-full hover:bg-green-400 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg shadow-green-500/80"
+              >
+                <Send size={20} weight="bold" />
+              </button>
+            </div>
           </div>
         </form>
       )}

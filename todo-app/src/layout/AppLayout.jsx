@@ -40,17 +40,24 @@ export default function AppLayout() {
     toast.success(`Task Updated successfully`);
   }
   return (
-    <Row className="bg-slate-900">
+    <Row className="bg-slate-900 overflow-hidden">
       <Header hide={hide} onHide={setHide} />
 
-      <main className="flex flex-col justify-between items-center h-12/12 w-6/12 bg-transparent    m-auto  rounded-sm p-5 max-[762px]:w-12/12  max-[762px]:p-2">
-        <TodoItem
-          item={item}
-          onChange={setItem}
-          handleDelete={handleDelete}
-          handleComplete={handleComplete}
-        />
-        <TodoForm item={item} onChange={setItem} hide={hide} />
+      <main className="flex flex-col h-screen w-full max-w-2xl m-auto p-5 overflow-hidden">
+        {/* Scrollable Container for Tasks */}
+        <div className="flex-1 overflow-y-auto min-h-0 mb-4 pr-2 custom-scrollbar">
+          <TodoItem
+            item={item}
+            onChange={setItem}
+            handleDelete={handleDelete}
+            handleComplete={handleComplete}
+          />
+        </div>
+
+        {/* Fixed Input at Bottom */}
+        <div className="shrink">
+          <TodoForm item={item} onChange={setItem} hide={hide} />
+        </div>
       </main>
     </Row>
   );
