@@ -11,7 +11,13 @@ export default function TodoList({ newItem, handleDelete, handleComplete }) {
         </span>
 
         <div className="flex flex-col ">
-          <h1 className="text-lg capitalize text-gray-700">{newItem.task}</h1>
+          <h1
+            className={` text-lg capitalize text-gray-700 ${
+              newItem.complete ? "line-through text-gray-600" : ""
+            }`}
+          >
+            {newItem.task}
+          </h1>
           <time className="text-sm lowercase text-gray-300">
             {" "}
             added: {formatDate(newItem.date)}
