@@ -33,7 +33,7 @@ export default function AppLayout() {
     toast.success(`Task Updated successfully`);
   }
   return (
-    <div className="bg-slate-900 overflow-auto h-svh flex flex-col  ">
+    <div className="bg-slate-900 overflow-auto h-screen flex flex-col  ">
       <Header hide={hide} onHide={setHide} />
 
       <main className="flex flex-col  w-full max-w-2xl m-auto p-5 overflow-hidden">
