@@ -21,7 +21,7 @@ export default function AppLayout() {
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    toast.success("Welcome back, Genius");
+    toast.success("fetching...");
     localStorage.setItem("task", JSON.stringify(item));
   }, [item]);
 
