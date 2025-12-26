@@ -7,7 +7,7 @@ export default function TodoItem({
   handleComplete,
 }) {
   return (
-    <ul className=" p-3 w-full h-svh bg-transparent overflow-y-auto rounded-sm   flex  flex-col gap-5 max-[520px]:p-1 ">
+    <ul className=" p-3 w-full  bg-transparent overflow-y-auto scroll-smooth h-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] rounded-sm   flex  flex-col gap-5 max-[520px]:p-1 ">
       {item.length > 0 ? (
         item.map((b) => (
           <TodoList
